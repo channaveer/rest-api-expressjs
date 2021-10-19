@@ -29,12 +29,14 @@ const RegisterController = {
                 });
             }
 
-            await UserService.register(userDetails).then((user) => {
-                return response.status(201).send({
-                    status: "success",
-                    message: "User registered successfully.",
-                    user,
-                });
+            var user = await UserService.register(userDetails);
+
+            //TODO: Send registration mail with
+
+            return response.status(201).send({
+                status: "success",
+                message: "User registered successfully.",
+                user,
             });
         } catch (error) {
             return response.status(422).send({

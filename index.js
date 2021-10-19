@@ -5,9 +5,6 @@ global.BASE_URL = __dirname;
 const express = require("express");
 const app = express();
 
-/** DotEnv Configuration */
-require("dotenv").config();
-
 /** Our Application Initialization Scripts */
 require(`${BASE_URL}/startup/init.js`)(app, express);
 
